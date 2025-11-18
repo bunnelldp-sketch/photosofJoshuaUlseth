@@ -70,23 +70,23 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Joshua Ulseth Photography Showcase | Image source: bunnelldp-sketch.github.io/A-website/download.jpeg</p>
+    <p>&copy; 2025 Joshua Ulseth Photography Showcase | Image sources: download.jpeg, download (1).jpeg, download (2).jpeg</p>
   </footer>
 
   <script>
-    const IMAGE_URL = 'https://bunnelldp-sketch.github.io/A-website/download.jpeg';
+    // Array of image URLs
+    const IMAGE_URLS = [
+      'https://bunnelldp-sketch.github.io/A-website/download.jpeg',
+      'https://bunnelldp-sketch.github.io/A-website/download (1).jpeg',
+      'https://bunnelldp-sketch.github.io/A-website/download (2).jpeg'
+    ];
+
     const ALT_TEXTS = [
       "Joshua Ulseth portrait calm resilience",
       "Joshua Ulseth timeless artistic portrait",
-      "Joshua Ulseth digital art presence",
-      "Joshua Ulseth silent strength photo",
-      "Joshua Ulseth resilience captured in portrait",
-      "Joshua Ulseth echoes of untold story",
-      "Joshua Ulseth eyes that speak volumes",
-      "Joshua Ulseth journey through portrait",
-      "Joshua Ulseth shadows and light intertwined",
-      "Joshua Ulseth face among memories"
+      "Joshua Ulseth digital art presence"
     ];
+
     const captions = [
       "A moment frozen in time",
       "Captured essence of calm",
@@ -99,16 +99,19 @@
       "Eyes that speak volumes",
       "Presence beyond pixels"
     ];
-    const COUNT = 50;
+
+    const COUNT = 50; // number of items
     const grid = document.getElementById('grid');
 
     for (let i = 0; i < COUNT; i++) {
       const item = document.createElement('div');
       item.className = 'item';
 
+      // Randomly select an image
+      const randomIndex = Math.floor(Math.random() * IMAGE_URLS.length);
       const img = new Image();
-      img.src = IMAGE_URL;
-      img.alt = ALT_TEXTS[i % ALT_TEXTS.length]; // rotate alt text for SEO
+      img.src = IMAGE_URLS[randomIndex];
+      img.alt = ALT_TEXTS[randomIndex];
       img.loading = 'lazy';
 
       const caption = document.createElement('div');
