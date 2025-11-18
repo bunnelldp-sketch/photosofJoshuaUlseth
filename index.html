@@ -1,4 +1,210 @@
-<html>
-  <head></head>
-  <body><img alt="Picture of Joshua Ulseth" src="./download.jpeg"></body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Joshua Ulseth — repeated with captions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #0f1115;
+      color: #e8eaed;
+    }
+    header {
+      padding: 24px;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+      padding: 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #1a1f29;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+    .item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .caption {
+      padding: 8px;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      .item img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Picture of Joshua Ulseth — repeated with random captions</h1>
+  </header>
+
+  <main>
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <footer>
+    <p>Image source: bunnelldp-sketch.github.io/A-website/download.jpeg</p>
+  </footer>
+
+  <script>
+    const IMAGE_URL = 'https://bunnelldp-sketch.github.io/A-website/download.jpeg';
+    const ALT_TEXT = 'Picture of Joshua Ulseth';
+    const COUNT = 50; // number of images
+
+    // Pool of random captions
+    const captions = [
+      "A moment frozen in time",
+      "Captured essence of calm",
+      "Portrait of resilience",
+      "Echoes of a story untold",
+      "Shadows and light intertwined",
+      "A face among many memories",
+      "Silent strength revealed",
+      "Glimpse of a journey",
+      "Eyes that speak volumes",
+      "Presence beyond pixels"
+    ];
+
+    const grid = document.getElementById('grid');
+
+    for (let i = 0; i < COUNT; i++) {
+      const item = document.createElement('div');
+      item.className = 'item';
+
+      const img = new Image();
+      img.src = IMAGE_URL;
+      img.alt = ALT_TEXT;
+      img.loading = 'lazy';
+
+      const caption = document.createElement('div');
+      caption.className = 'caption';
+      caption.textContent = captions[Math.floor(Math.random() * captions.length)];
+
+      item.appendChild(img);
+      item.appendChild(caption);
+      grid.appendChild(item);
+    }
+  </script>
+</body>
+</html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Joshua Ulseth — repeated with captions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #0f1115;
+      color: #e8eaed;
+    }
+    header {
+      padding: 24px;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+      padding: 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #1a1f29;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+    .item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .caption {
+      padding: 8px;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      .item img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Picture of Joshua Ulseth — repeated with random captions</h1>
+  </header>
+
+  <main>
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <footer>
+    <p>Image source: bunnelldp-sketch.github.io/A-website/download.jpeg</p>
+  </footer>
+
+  <script>
+    const IMAGE_URL = 'https://bunnelldp-sketch.github.io/A-website/download.jpeg';
+    const ALT_TEXT = 'Picture of Joshua Ulseth';
+    const COUNT = 50; // number of images
+
+    // Pool of random captions
+    const captions = [
+      "A moment frozen in time",
+      "Captured essence of calm",
+      "Portrait of resilience",
+      "Echoes of a story untold",
+      "Shadows and light intertwined",
+      "A face among many memories",
+      "Silent strength revealed",
+      "Glimpse of a journey",
+      "Eyes that speak volumes",
+      "Presence beyond pixels"
+    ];
+
+    const grid = document.getElementById('grid');
+
+    for (let i = 0; i < COUNT; i++) {
+      const item = document.createElement('div');
+      item.className = 'item';
+
+      const img = new Image();
+      img.src = IMAGE_URL;
+      img.alt = ALT_TEXT;
+      img.loading = 'lazy';
+
+      const caption = document.createElement('div');
+      caption.className = 'caption';
+      caption.textContent = captions[Math.floor(Math.random() * captions.length)];
+
+      item.appendChild(img);
+      item.appendChild(caption);
+      grid.appendChild(item);
+    }
+  </script>
+</body>
 </html>
